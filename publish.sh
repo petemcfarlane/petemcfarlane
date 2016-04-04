@@ -19,6 +19,6 @@ cp -R output_prod ../petemcfarlane-public
 
 git commit -am "$1"
 
-# git remote add origin git@github.com:petemcfarlane/petemcfarlane-public.git
+git remote add origin git@github.com:petemcfarlane/petemcfarlane-public.git
 
-# git push -u origin master
+git push -u origin master
