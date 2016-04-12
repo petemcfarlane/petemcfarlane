@@ -3,6 +3,7 @@
 # in a template to get the contents of the `title` key.
 title: Pete McFarlane
 subtitle: Software Engineer
+google_analytics_tracking_id: UA-76312351-1
 
 # Insert your disqus shortname
 #disqus:
