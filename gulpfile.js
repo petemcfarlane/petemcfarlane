@@ -4,6 +4,8 @@ var gulp = require('gulp'),
 
 gulp.task('default', ['sass', 'bootstrap-js']);
 
+gulp.task('sculpin', ['default']);
+
 gulp.task('bootstrap-js', function () {
     return gulp.src('node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js')
         .pipe(gulp.dest('output_dev/js/'))

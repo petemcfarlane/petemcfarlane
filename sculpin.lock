@@ -1,65 +1,11 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
     ],
-    "hash": "d223756c62cdbdbb6b0ead98dac1cfb4",
+    "hash": "1c26a4a2c23554630eebe8319979ddf5",
     "packages": [
-        {
-            "name": "components/bootstrap",
-            "version": "2.3.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/components/bootstrap.git",
-                "reference": "4e517c991623b3bd913e2becd44831b2c9b0be90"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/components/bootstrap/zipball/4e517c991623b3bd913e2becd44831b2c9b0be90",
-                "reference": "4e517c991623b3bd913e2becd44831b2c9b0be90",
-                "shasum": ""
-            },
-            "require": {
-                "components/jquery": "*"
-            },
-            "suggest": {
-                "components/bootstrap-default": "Provide a theme for Bootstrap as components/bootstrap only provides the CSS as file assets"
-            },
-            "type": "component",
-            "extra": {
-                "component": {
-                    "scripts": [
-                        "js/bootstrap.js"
-                    ],
-                    "files": [
-                        "js/bootstrap.min.js",
-                        "css/*.css",
-                        "img/*.png"
-                    ],
-                    "shim": {
-                        "deps": [
-                            "jquery"
-                        ]
-                    }
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Twitter, Inc"
-                }
-            ],
-            "description": "Sleek, intuitive, and powerful front-end framework for faster and easier web development.",
-            "homepage": "http://twitter.github.com/bootstrap/",
-            "keywords": [
-                "bootstrap",
-                "css"
-            ],
-            "time": "2013-07-18 20:01:48"
-        },
         {
             "name": "components/highlightjs",
             "version": "7.3.0",
@@ -115,7 +61,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/components/jquery/zipball/0e94233e6a4ab678d8fc04312241b2f840717b0c",
+                "url": "https://api.github.com/repos/components/jquery/zipball/ae5c0c13cf163b3751ce55f9d9e97c1ba7ff796d",
                 "reference": "0e94233e6a4ab678d8fc04312241b2f840717b0c",
                 "shasum": ""
             },
@@ -152,45 +98,52 @@
         },
         {
             "name": "kriswallsmith/assetic",
-            "version": "v1.1.2",
+            "version": "v1.3.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/kriswallsmith/assetic.git",
-                "reference": "735cffd3982c6e8cdebe292d5db39d077f65890f"
+                "reference": "cb92b179dddfb8a3f341d53bd27e088f24d9c2e5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/735cffd3982c6e8cdebe292d5db39d077f65890f",
-                "reference": "735cffd3982c6e8cdebe292d5db39d077f65890f",
+                "url": "https://api.github.com/repos/kriswallsmith/assetic/zipball/cb92b179dddfb8a3f341d53bd27e088f24d9c2e5",
+                "reference": "cb92b179dddfb8a3f341d53bd27e088f24d9c2e5",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.1",
                 "symfony/process": "~2.1"
             },
+            "conflict": {
+                "twig/twig": "<1.12"
+            },
             "require-dev": {
                 "cssmin/cssmin": "*",
                 "joliclic/javascript-packer": "*",
                 "kamicane/packager": "*",
-                "leafo/lessphp": "*",
-                "leafo/scssphp": "*",
-                "leafo/scssphp-compass": "*",
+                "leafo/lessphp": "^0.3.7",
+                "leafo/scssphp": "*@dev",
+                "leafo/scssphp-compass": "*@dev",
                 "mrclay/minify": "*",
-                "phpunit/phpunit": "~3.7",
+                "patchwork/jsqueeze": "~1.0|~2.0",
+                "phpunit/phpunit": "~4.8",
+                "psr/log": "~1.0",
                 "ptachoire/cssembed": "*",
-                "twig/twig": "~1.6"
+                "symfony/phpunit-bridge": "~2.7",
+                "twig/twig": "~1.8|~2.0"
             },
             "suggest": {
                 "leafo/lessphp": "Assetic provides the integration with the lessphp LESS compiler",
                 "leafo/scssphp": "Assetic provides the integration with the scssphp SCSS compiler",
                 "leafo/scssphp-compass": "Assetic provides the integration with the SCSS compass plugin",
+                "patchwork/jsqueeze": "Assetic provides the integration with the JSqueeze JavaScript compressor",
                 "ptachoire/cssembed": "Assetic provides the integration with phpcssembed to embed data uris",
                 "twig/twig": "Assetic provides the integration with the Twig templating engine"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.4-dev"
                 }
             },
             "autoload": {
@@ -219,32 +172,74 @@
                 "compression",
                 "minification"
             ],
-            "time": "2013-07-19 00:03:27"
+            "time": "2015-10-15 01:33:42"
         },
         {
-            "name": "robloach/component-installer",
-            "version": "0.0.12",
+            "name": "petemc/sculpin-gulp-bundle",
+            "version": "v0.0.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/RobLoach/component-installer.git",
-                "reference": "1864f25db21fc173e02a359f646acd596c1b0460"
+                "url": "https://github.com/petemcfarlane/sculpin-gulp-bundle.git",
+                "reference": "4a40616c8aa62d1bfe56e920c5a66436d2f87286"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/RobLoach/component-installer/zipball/1864f25db21fc173e02a359f646acd596c1b0460",
-                "reference": "1864f25db21fc173e02a359f646acd596c1b0460",
+                "url": "https://api.github.com/repos/petemcfarlane/sculpin-gulp-bundle/zipball/4a40616c8aa62d1bfe56e920c5a66436d2f87286",
+                "reference": "4a40616c8aa62d1bfe56e920c5a66436d2f87286",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpspec/phpspec": "^2.5",
+                "sculpin/sculpin": "^2.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PeteMc\\Sculpin\\SculpinGulpBundle\\": "src/PeteMc/Sculpin/SculpinGulpBundle/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Pete McFarlane",
+                    "email": "peterjohnmcfarlane@gmail.com"
+                }
+            ],
+            "description": "Run gulp tasks with sculpin generate",
+            "time": "2016-04-13 12:52:47"
+        },
+        {
+            "name": "robloach/component-installer",
+            "version": "0.2.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/RobLoach/component-installer.git",
+                "reference": "908a859aa7c4949ba9ad67091e67bac10b66d3d7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/RobLoach/component-installer/zipball/908a859aa7c4949ba9ad67091e67bac10b66d3d7",
+                "reference": "908a859aa7c4949ba9ad67091e67bac10b66d3d7",
                 "shasum": ""
             },
             "require": {
+                "composer-plugin-api": "^1.0",
                 "kriswallsmith/assetic": "1.*",
                 "php": ">=5.3.2"
             },
             "require-dev": {
-                "composer/composer": "1.*"
+                "composer/composer": "1.*@alpha",
+                "phpunit/phpunit": "4.*"
             },
-            "type": "composer-installer",
+            "type": "composer-plugin",
             "extra": {
-                "class": "ComponentInstaller\\Installer"
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                },
+                "class": "ComponentInstaller\\ComponentInstallerPlugin"
             },
             "autoload": {
                 "psr-0": {
@@ -258,28 +253,19 @@
             "authors": [
                 {
                     "name": "Rob Loach",
-                    "email": "robloach@gmail.com",
                     "homepage": "http://robloach.net"
                 }
             ],
             "description": "Allows installation of Components via Composer.",
-            "time": "2013-08-31 23:46:48"
+            "time": "2015-08-10 12:35:38"
         }
     ],
-    "packages-dev": [
-
-    ],
-    "aliases": [
-
-    ],
+    "packages-dev": [],
+    "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ],
-    "platform": [
-
-    ],
-    "platform-dev": [
-
-    ]
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
 }
