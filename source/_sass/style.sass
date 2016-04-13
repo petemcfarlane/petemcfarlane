@@ -1,12 +1,57 @@
-@import url(https://fonts.googleapis.com/css?family=Lora|Catamaran)
 
+// Fonts
+
+@import url(https://fonts.googleapis.com/css?family=Lora|Catamaran)
 $font-family-sans-serif:  'Catamaran', "Helvetica Neue", Helvetica, Arial, sans-serif
 $font-family-serif:       'Lora', Georgia, "Times New Roman", Times, serif
-$font-family-base:        $font-family-serif
+$font-family-base:        $font-family-sans-serif
 $headings-font-family:    $font-family-sans-serif
+
+// Container width
 
 $grid-gutter-width:       30px
 $container-large-desktop: (1000px + $grid-gutter-width)
 $container-desktop:       (900px + $grid-gutter-width)
+
+// Colors
+
+$brand-primary: #008f95
+$brand-success: #008f95
+$brand-info:    #eb6e80
+$brand-warning: #e9b000
+$brand-danger:  #e24e42
+
+// Tags
+
+$tag-bg-colors: #00c4cf, #e54b1b, #f6f6f7, #2fd0a3, #3960ce, #fa9C00, #e5556e, #3b208d // light blue, orange, light grey, light green, dark blue, mustard, pink, purple
+$tag-text-colors: #fff, #f4e0a6, #222, #fff, #fff, #3d0218, #133751, #fff // white, cream, dark grey, white, white, burgundy, navy, white
+
+@for $i from 1 through length($tag-bg-colors)
+  .btn-tag:nth-of-type(#{length($tag-bg-colors)}n+#{$i})
+    background: nth($tag-bg-colors, $i)
+    color: nth($tag-text-colors, $i)
+
+.btn-tag
+  margin: 4px 2px 0
+
+// Border radius
+
+$border-radius-base:  0
+$border-radius-large: 0
+$border-radius-small: 0
+
+// Navbar
+
+$navbar-default-color:             #454545
+$navbar-default-bg:                #f6f6f7
+$navbar-default-border:            transparent
+
+// Navbar links
+$navbar-default-link-color:                #454545
+$navbar-default-link-hover-color:          $brand-primary
+
+
+
+// Bootstrap
 
 @import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap"

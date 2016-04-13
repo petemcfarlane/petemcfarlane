@@ -81,27 +81,31 @@
                             <p><a href="https://github.com/petemcfarlane"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a></p>
                         </div>
                     </div>
-                    <div class="panel panel-default">
+                    {% if data.posts_categories %}
+                    <div class="panel">
                         <div class="panel-body">
                             <h4><a href="{{ site.url }}/blog/categories">Categories</a></h4>
                             {% for category,posts in data.posts_categories %}
-                            <a href="{{ site.url }}/blog/categories/{{ category|url_encode(true) }}" class="btn btn-default">{{ category }}</a>
+                            <a href="{{ site.url }}/blog/categories/{{ category|url_encode(true) }}" class="btn btn-tag">{{ category }}</a>
                             {% endfor %}
                         </div>
                     </div>
-                    <div class="panel panel-default">
+                    {% endif %}
+                    {% if data.posts_tags %}
+                    <div class="panel">
                         <div class="panel-body">
                             <h4><a href="{{ site.url }}/blog/tags">Tags</a></h4>
                             {% for tag,posts in data.posts_tags %}
-                            <a href="{{ site.url }}/blog/tags/{{ tag|url_encode(true) }}" class="btn btn-default">{{ tag }}</a>
+                            <a href="{{ site.url }}/blog/tags/{{ tag|url_encode(true) }}" class="btn btn-tag">{{ tag }}</a>
                             {% endfor %}
                         </div>
                     </div>
+                    {% endif %}
                 </div>
             </div>
         </div>
         <footer class="container">
-            &copy; {{ "now"|date("Y") }} {{ site.title }}
+            <p>&copy; {{ "now"|date("Y") }} {{ site.title }}</p>
         </footer>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

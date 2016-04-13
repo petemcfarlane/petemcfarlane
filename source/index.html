@@ -19,17 +19,18 @@ use:
         </div>
         {% if post.meta.tags %}
             <p class="tags">
-            Tags:
+            Tagged:
             {% for tag in post.meta.tags %}
-            <a href="{{ site.url }}/blog/tags/{{ tag|url_encode(true) }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+            <a href="{{ site.url }}/blog/tags/{{ tag|url_encode(true) }}" class="btn btn-tag btn-sm">{{ tag }}</a>
             {% endfor %}
             </p>
         {% endif %}
     </article>
+    <hr>
 {% endfor %}
 {% if page.pagination.previous_page or page.pagination.next_page %}
     <nav>
-        {% if page.pagination.previous_page %}<a href="{{ site.url }}{{ page.pagination.previous_page.url }}">Newer Posts</a>{% endif %}<br />
-        {% if page.pagination.next_page %}<a href="{{ site.url }}{{ page.pagination.next_page.url }}">Older Posts</a>{% endif %}<br />
+        {% if page.pagination.previous_page %}<a href="{{ site.url }}{{ page.pagination.previous_page.url }}">Newer Posts <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>{% endif %}<br />
+        {% if page.pagination.next_page %}<a href="{{ site.url }}{{ page.pagination.next_page.url }}"><i class="fa fa-long-arrow-left" aria-hidden="true"></i> Older Posts</a>{% endif %}<br />
     </nav>
 {% endif %}

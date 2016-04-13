@@ -14,17 +14,17 @@
         </div>
         {% if page.categories %}
             <p class="categories">
-            Categories:
+            Category:
             {% for category in page.categories %}
-            <a href="{{ site.url }}/blog/categories/{{ category|url_encode(true) }}">{{ category }}</a>{% if not loop.last %}, {% endif %}
+            <a href="{{ site.url }}/blog/categories/{{ category|url_encode(true) }}" class="btn btn-sm btn-tag">{{ category }}</a>
             {% endfor %}
             </p>
         {% endif %}
         {% if page.tags %}
             <p class="tags">
-            Tags:
+            Tagged:
             {% for tag in page.tags %}
-            <a href="{{ site.url }}/blog/tags/{{ tag|url_encode(true) }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+            <a href="{{ site.url }}/blog/tags/{{ tag|url_encode(true) }}" class="btn btn-sm btn-tag">{{ tag }}</a>
             {% endfor %}
             </p>
         {% endif %}
