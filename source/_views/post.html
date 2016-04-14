@@ -8,6 +8,7 @@
     <article>
         <header>
             <h2>{{ page.title }}</h2>
+            <h3><small>{{ page.date | date("jS F, Y") }}</small></h3>
         </header>
         <div>
             {{ page.blocks.content|raw }}
