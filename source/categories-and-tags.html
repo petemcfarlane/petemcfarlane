@@ -1,0 +1,22 @@
+---
+layout: blank
+use:
+    - posts_categories
+    - posts_tags
+---
+{% block content %}
+{
+    "categories": [
+    {% for category,posts in data.posts_categories %}
+    "{{ category }}"{% if not loop.last %},{% endif %}
+
+    {% endfor %}
+],
+    "tags": [
+    {% for tag,posts in data.posts_tags %}
+    "{{ tag }}"{% if not loop.last %},{% endif %}
+
+    {% endfor %}
+]
+}
+{% endblock %}

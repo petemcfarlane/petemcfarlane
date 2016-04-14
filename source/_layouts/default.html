@@ -129,6 +129,40 @@
         <script src="{{ site.url }}/components/highlightjs/highlight.pack.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
 
+        <script type="text/javascript">
+            $(function () {
+                function populateSidebarCategoriesAndTags() {
+                    $.get('/categories-and-tags.json', function (categoriesAndTags) {
+                        var categoriesHTML = categoriesAndTags.categories.reduce(function (html, category) {
+                            return html + '<a href="{{ site.url }}/blog/categories/' + category + '" class="btn btn-tag">' + category + '</a>';
+                        }, '');
+
+                        var tagsHTML = categoriesAndTags.tags.reduce(function (html, tag) {
+                            return html + '<a href="{{ site.url }}/blog/tags/' + tag + '" class="btn btn-tag">' + tag + '</a>';
+                        }, '');
+
+                        $('.sidebar').append(
+                                '<div class="panel">' +
+                                '<div class="panel-body">' +
+                                '<h4><a href="{{ site.url }}/blog/categories">Categories</a></h4>' +
+                                categoriesHTML +
+                                '</div>' +
+                                '</div>'
+                        ).append(
+                                '<div class="panel">' +
+                                '<div class="panel-body">' +
+                                '<h4><a href="{{ site.url }}/blog/tags">Tags</a></h4>' +
+                                tagsHTML +
+                                '</div>' +
+                                '</div>'
+                        );
+                    });
+                }
+
+                {% if not data.posts_categories or not data.posts_tags %}populateSidebarCategoriesAndTags();{% endif %}
+            });
+        </script>
+
         {% block scripts_after %}
         {% endblock %}
     </body>
