@@ -1,7 +1,11 @@
 ---
 title: Object Oriented Programming in PHP
-tags: [oop, php, design]
+tags: [oop, php, design, mentoring]
 categories: [oop]
+related:
+    Docker - first steps: docker
+    "Docker and Uncomplicated Firewall (UFW)": docker-and-ufw
+
 ---
 
 I had a question from one of the people I'm mentoring on [http://phpmentoring.org](http://phpmentoring.org). 

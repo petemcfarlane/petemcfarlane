@@ -84,10 +84,12 @@
                     {% if page.related %}
                     <div class="panel">
                         <div class="panel-body">
-                            <h4>Related posts</h4>
+                            <h4>Related Posts</h4>
+                            <ul>
                             {% for title,url in page.related %}
-                            <a href="{{ site.url }}/blog/{{ url }}">{{ title }}</a>
+                            <li><a href="{{ site.url }}/blog/{{ url }}">{{ title }}</a></li>
                             {% endfor %}
+                            </ul>
                         </div>
                     </div>
                     {% endif %}

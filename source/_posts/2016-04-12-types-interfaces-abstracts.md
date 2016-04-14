@@ -2,6 +2,11 @@
 title: Types, Interfaces and Abstracts
 tags: [oop, php, design]
 categories: [oop]
+related:
+    Object Orientated Design in PHP: object-orientated-programming-in-php
+    Value Objects, Entities and Services: value-objects-entities-services
+    Naming things: naming-things
+
 ---
 
 ### Types

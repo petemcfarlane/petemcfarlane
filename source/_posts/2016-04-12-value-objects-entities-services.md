@@ -2,6 +2,11 @@
 title: Value Objects, Entities and Services
 tags: [oop, php, design]
 categories: [oop]
+related:
+    Object Orientated Design in PHP: object-orientated-programming-in-php
+    Types, interfaces and abstracts: types-interfaces-abstracts
+    Naming things: naming-things
+
 ---
 
 ### Value Objects

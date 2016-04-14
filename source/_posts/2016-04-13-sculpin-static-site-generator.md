@@ -2,6 +2,9 @@
 title: Sculpin - the static site generator
 tags: [php, symfony, sculpin]
 categories: [php]
+related:
+    Gulp with Sculpin - Building a Symfony bundle: building-a-symfony-bundle
+
 ---
 
 # Sculpin

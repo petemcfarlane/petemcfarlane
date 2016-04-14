@@ -2,6 +2,12 @@
 title: Naming things
 tags: [oop, php, design]
 categories: [oop]
+related:
+    Named (static) constructors: named-constructors
+    Value Objects, Entities and Services: value-objects-entities-services
+    Object Orientated Design in PHP: object-orientated-programming-in-php
+    Types, interfaces and abstracts: types-interfaces-abstracts
+
 ---
 
 Without sounding too pretentious, I think naming things well is a skill that comes with experience. As a software designer you are given the complete freedom to name your variables, functions and classes however you choose, within the constraints of the language.

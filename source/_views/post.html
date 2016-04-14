@@ -13,6 +13,18 @@
         <div>
             {{ page.blocks.content|raw }}
         </div>
+        {% if page.related %}
+        <div class="panel">
+            <div class="panel-body">
+                <h4>Further reading</h4>
+                <ul>
+                    {% for title,url in page.related %}
+                    <li><a href="{{ site.url }}/blog/{{ url }}">{{ title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endif %}
         {% if page.categories %}
             <p class="categories">
             Category:

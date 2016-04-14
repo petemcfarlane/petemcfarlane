@@ -2,6 +2,10 @@
 title: Docker and Uncomplicated Firewall (UFW)
 tags: [devops, docker, security]
 categories: [docker]
+related:
+    "Docker and PHP 7": docker-php7
+    "Docker - first steps": docker
+
 ---
 
 I ran into an issue yesterday where even though I am using the [Uncomplicated Firewall (UFW)](https://help.ubuntu.com/community/UFW) with restricted access, I could still connect to some of my internal docker containers from outside my server.
