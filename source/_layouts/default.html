@@ -81,6 +81,16 @@
                             <p><a href="https://github.com/petemcfarlane"><i class="fa fa-github" aria-hidden="true"></i> GitHub</a></p>
                         </div>
                     </div>
+                    {% if page.related %}
+                    <div class="panel">
+                        <div class="panel-body">
+                            <h4>Related posts</h4>
+                            {% for title,url in page.related %}
+                            <a href="{{ site.url }}/blog/{{ url }}">{{ title }}</a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    {% endif %}
                     {% if data.posts_categories %}
                     <div class="panel">
                         <div class="panel-body">
