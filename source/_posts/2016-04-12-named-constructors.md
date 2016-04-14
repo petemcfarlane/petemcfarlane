@@ -10,7 +10,7 @@ related:
 
 ---
 
-I said objects are often created using the `new` keyword before a class, but sometimes you may want multiple ways to instantiate an object, for example with different parameters, or with an explicitly named method. In some programming languages you can use _method overloading_ to pass different parameters to the constructor but PHP doesn't have that. In PHP we use _named constructors_ like so:
+Objects are often created using the `new` keyword before a class name, but sometimes you may want multiple ways to instantiate an object, for example with different parameters, or with an explicitly named method. In some programming languages you can use _method overloading_ to pass different parameters to the constructor but PHP doesn't have that. In PHP we use _named constructors_ like so:
 
 ```php
 class Distance
@@ -36,3 +36,6 @@ class Distance
 
 Here you'll see that the constructor has been made private so we can't create new Distance objects with our usual `new Distance(32)`. Instead we can call `Distance::fromKilometers(32)` or `Distance::fromMiles(19.88)` and we will be returned a new Distance object (as private methods are only accessible within the same class).
 
+An advantage of named constructors is that it allows you to be very explicit as to how you are creating an instance of an object. It may also help with encapsulation and object validation.
+
+[Mathias Verraes on Named Constructors in PHP](http://verraes.net/2014/06/named-constructors-in-php/)

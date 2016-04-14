@@ -21,7 +21,7 @@ app:
   ...
 ```
 
-My ports config now looks like this
+My ports configuration now looks like this
 
 ```
 app:

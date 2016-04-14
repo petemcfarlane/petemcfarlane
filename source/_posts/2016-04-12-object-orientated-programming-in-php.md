@@ -3,8 +3,9 @@ title: Object Oriented Programming in PHP
 tags: [oop, php, design, mentoring]
 categories: [oop]
 related:
-    Docker - first steps: docker
-    "Docker and Uncomplicated Firewall (UFW)": docker-and-ufw
+    Named constructors: named-constructors
+    Naming things: naming-things
+    Types, interfaces and abstracts: types-interfaces-abstracts
 
 ---
 
@@ -18,9 +19,11 @@ This is intended to be an introductory level article, some basic knowledge of PH
 
 ### Firstly, what is an object?
 
-Put simply, it is something in your application that can have both state (_properties_) and also behavior (_methods_) that usually represents something in real life (we call this modeling our domain). 
+Put simply, it is something in your application that can have both state (_properties_) and also behavior (_methods_) that usually represents something in real life (we call this modeling our domain).
 
-We can design objects wherever it makes sense to: for introducing a new piece of logic, or creating a feature. A well designed object should do (or represent) one thing (this is called SRP or the Single Responsibility Principle). There is no limit to the number of objects we can create or use in an applications, it is often better to have lots of small, simple objects that can be composed together to make up a larger application. Smaller, simpler objects are
+We can design objects wherever it makes sense to: for introducing a new piece of logic, or creating a feature or part of it. A well designed object should do (or represent) one thing - this is called SRP or the Single Responsibility Principle. There is no limit to the number of objects we can create or use in an applications, it is often better to have lots of small, simple objects that can be composed together to make up a larger application. 
+
+Smaller, simpler objects are:
  
  - easier to understand, read and reason about
  - easier to re-use (in this application and other applications)
@@ -30,11 +33,11 @@ We can design objects wherever it makes sense to: for introducing a new piece of
  - will probably have less dependencies on other code
  - easier to debug when things go wrong
 
-Properties are like variables that belong to the object. They can be set to any primitive types (strings, integers, floats, arrays) or even other objects, and they change or mutate over time.
+### Properties and Methods
 
-Methods are similar to functions except they belong, or relate, to the object. They are normally split into _imperative_ (commanding) or _interrogative_ (questioning) categories, and ideally each method will __do one thing only__.
+Properties are like _variables_ that belong to the object. They can be set to any primitive types (strings, integers, floats, arrays) or even other objects, and they can change or mutate over time.
 
-### Visibility
+Methods are similar to _functions_ except they belong, or relate, to the object. They are normally split into _imperative_ (commanding) or _interrogative_ (questioning) categories, and ideally each method will __do one thing only__.
 
 Properties and methods can have different _visibilities_ (public, private or protected) which alter the scope of the property or method, and affect how other objects can interact with it.
 
@@ -44,4 +47,37 @@ Properties and methods can have different _visibilities_ (public, private or pro
 
 ### What is a class?
 
-A class is often called the blueprint for an object. An object is an _instance_ of a class. To create an instance of a class (_object_) you typically use the `new` keyword, such as `new MyClass();`. Using the new keyword calls a special reserved method on the class called `__construct()`. The constructor may take parameters or set up internal properties of the object if needs be. It is usually important that any parameters or dependencies the object needs to be considered _valid_ are given at construction time.
+A class is often called the blueprint for an object. An object is an _instance_ of a class. To create an instance of a class (_object_) you typically use the `new` keyword, such as `new MyClass();`. Using the new keyword calls a special reserved method on the class called `__construct()`. The constructor may take parameters or set up internal properties of the object if needs be. Any parameters or dependencies the object needs to be considered _valid_ should be passed at construction time, otherwise you may end up with invalid or incomplete objects.
+
+Defining a class 
+
+```php
+<?php
+
+class Student
+{
+    private $name;
+    private $dob;
+
+    public function __construct(string $name, DateTime $dob)
+    {
+        $this->name = $name;
+        $this->dob = $dob;
+    }
+
+    public function age(): Int
+    {
+        return $this->dob->diff(new DateTime())->y;
+    }
+}
+```
+
+Using the above class
+
+```php
+<?php
+
+$pete = new Student('Pete', new DateTime('1 June 1988'));
+
+echo $pete->age();
+```
