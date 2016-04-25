@@ -116,3 +116,23 @@ bin2dec = foldl (\acc x -> acc * 2 + digitToInt x) 0
 Not bad! Do you have any other solutions that you think are more readable? Which do you prefer?
 
 I must say I prefer the Haskell implementation, but I definitely prefer the JavaScript test file! I'll have to have a look at HUnit to see if I can write something simpler...
+
+## UPDATE: Added Scala Implementation
+
+```scala
+def bin2dec (binaryString: String): Int = {
+  binaryString.foldLeft(0)((acc, char) => acc * 2 + char.asDigit)
+}
+```
+
+This is basically the same implementation but different language. 
+```scala
+"1010"                              // String = 1010
+"1010".toList                       // List[Char] = List(1, 0, 1, 0)
+"1010".toList.map(_.toInt)          // List[Int] = List(49, 48, 49, 48)
+"1010".toList.map(_.toString)       // List[String] = List(1, 0, 1, 0)
+"1010".toList.map(_.toString.toInt) // List[Int] = List(1, 0, 1, 0)
+"1010".toList.map(_.asDigit)        // List[Int] = List(1, 0, 1, 0)
+```
+
+It's worth noting that converting a `Char` to `Int` returns an ASCII encoded value, so you need to use `_.toString.toInt` or the simpler `_.asDigit`.
