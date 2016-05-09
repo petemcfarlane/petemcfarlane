@@ -80,3 +80,9 @@ minNumCoins coins target = lookup ! target
 ```
 
 Not much has changed, but we are now selecting the target from a `lookup` value. This is instantiated as an array the size of our target value, and filled from mapping over the `numCoins [0..]` infinite list. Instead of recursively calling the `minNumCoins` method on the last line, we can simply select the value from our lookup array. This provides us with huge performance gains for looking up large values.
+
+### Further reading
+
+ - [Dynamic Programming - Python](http://interactivepython.org/runestone/static/pythonds/Recursion/DynamicProgramming.html)
+ - [Lazy Dynamic Programming - Haskell](http://jelv.is/blog/Lazy-Dynamic-Programming/)
+ - [Leeds Code Dojo - Dynamic Programming](https://github.com/LeedsCodeDojo/DynamicProgramming)
