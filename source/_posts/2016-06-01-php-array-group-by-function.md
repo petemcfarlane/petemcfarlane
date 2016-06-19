@@ -2,6 +2,9 @@
 title: PHP Group array by key or callback
 tags: [kata, haskell, js, tdd]
 categories: [kata]
+related:
+    PHP array transpose: php-array-transpose
+
 ---
 
 Have you ever needed to group an array of data in PHP and had to write awkward loops or array_reduce code to accomplish this?
