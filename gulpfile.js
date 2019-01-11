@@ -4,9 +4,7 @@ var gulp = require('gulp'),
     rename = require('gulp-rename'),
     del = require('del');
 
-gulp.task('default', ['sass', 'bootstrap-js', 'categories-and-tasks-to-json']);
 
-gulp.task('sculpin', ['default']);
 
 gulp.task('bootstrap-js', function () {
     return gulp.src('node_modules/bootstrap-sass/assets/javascripts/bootstrap.min.js')
@@ -22,18 +20,17 @@ gulp.task('sass', function () {
         .pipe(gulp.dest('output_prod/css/'))
 });
 
-gulp.task('categories-and-tasks-to-json', ['copy-categories-and-tasks-to-json', 'delete-old-categories-and-tasks-html-folder']);
-
-gulp.task('copy-categories-and-tasks-to-json', function () {
+gulp.task('copy-categories-and-tasks-to-json', function (done) {
    gulp.src('output_dev/categories-and-tags/index.html')
        .pipe(rename('categories-and-tags.json'))
        .pipe(gulp.dest('output_dev/'));
    gulp.src('output_prod/categories-and-tags/index.html')
        .pipe(rename('categories-and-tags.json'))
        .pipe(gulp.dest('output_prod/'));
+    done();
 });
 
-gulp.task('delete-old-categories-and-tasks-html-folder', ['copy-categories-and-tasks-to-json'], function () {
+gulp.task('delete-old-categories-and-tasks-html-folder', gulp.series(['copy-categories-and-tasks-to-json']), function () {
     return del([
         'output_dev/categories-and-tags/**',
         'output_dev/_posts/**',
@@ -43,3 +40,9 @@ gulp.task('delete-old-categories-and-tasks-html-folder', ['copy-categories-and-t
         'output_prod/_sass/**'
     ])
 });
+
+gulp.task('categories-and-tasks-to-json', gulp.series(['copy-categories-and-tasks-to-json', 'delete-old-categories-and-tasks-html-folder']));
+
+gulp.task('default', gulp.series(['sass', 'bootstrap-js', 'categories-and-tasks-to-json']));
+
+gulp.task('sculpin', gulp.series(['default']));
