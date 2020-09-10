@@ -1,6 +1,6 @@
 {
   "devDependencies": {
-    "bootstrap-sass": "^3.3.6",
+    "bootstrap-sass": "^3.4.1",
     "del": "^3.0.0",
     "gulp": "^4.0.0",
     "gulp-clean-css": "^2.0.6",
